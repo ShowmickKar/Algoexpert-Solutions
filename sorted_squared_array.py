@@ -1,7 +1,7 @@
 # Problem Link: https://www.algoexpert.io/questions/Sorted%20Squared%20Array
 
 def sortedSquaredArray(array):
-  positives = []
+  	positives = []
 	negatives = []
 	ans = []
 	for item in array:
