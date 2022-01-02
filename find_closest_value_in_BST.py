@@ -2,18 +2,17 @@
 
 import math
 
-def findClosestValueInBstHelper(tree, target, hash_value):
+def findClosestValueInBstHelper(tree, target, closest):
 	if tree == None:
-		return hash_value[1]
-	if (abs(target - tree.value)) < abs(target - hash_value[1]):
-		hash_value[1] = tree.value
+		return closest
+	if abs(tree.value - target) < abs(closest - target):
+		closest = tree.value
 	if target > tree.value:
-		return findClosestValueInBstHelper(tree.right, target, hash_value)
-	return findClosestValueInBstHelper(tree.left, target, hash_value)
+		return findClosestValueInBstHelper(tree.right, target, closest)
+	return findClosestValueInBstHelper(tree.left, target, closest)
 
 def findClosestValueInBst(tree, target):
-	hash_value = {1 : -math.inf}
-	return findClosestValueInBstHelper(tree, target, hash_value)		
+    return findClosestValueInBstHelper(tree, target, math.inf)
 
 # This is the class of the input tree. Do not edit.
 class BST:
