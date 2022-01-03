@@ -1,4 +1,4 @@
-# Problem Link: https://www.algoexpert.io/questions/Branch%20Sums
+	# Problem Link: https://www.algoexpert.io/questions/Branch%20Sums
 
 class BinaryTree:
     def __init__(self, value):
@@ -17,6 +17,6 @@ def branchSumsHelper(root, cur_sum, ans):
 	branchSumsHelper(root.right, cur_sum + root.value, ans)		
 		
 def branchSums(root):
-	ans = []
-    branchSumsHelper(root, 0, ans)
+    	ans = []
+    	branchSumsHelper(root, 0, ans)
 	return ans
